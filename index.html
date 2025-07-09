@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Movie Explorer</title>
+
+  <!-- Tailwind CSS with dark mode enabled -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    };
+  </script>
+</head>
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white min-h-screen font-sans transition">
+
+  <div class="container mx-auto px-4 py-6">
+    <!-- Header and Theme Toggle -->
+    <div class="flex justify-between items-center mb-6">
+      <h1 class="text-3xl font-bold">🎬 Mini Movie Explorer</h1>
+      <button id="themeToggle"
+        class="flex items-center gap-2 px-4 py-2 rounded text-white dark:text-white bg-gray-700 hover:bg-gray-600 transition">
+        <span id="themeIcon">🌙</span>
+        <span id="themeLabel">Dark Mode</span>
+      </button>
+    </div>
+
+    <!-- Search Input -->
+    <input id="searchInput" type="text" placeholder="Search for movies..."
+      class="w-full mb-6 p-3 rounded bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-500" />
+
+    <!-- Search Results -->
+    <h2 class="text-2xl font-semibold mb-3">🔍 Search Results</h2>
+    <div id="movieResults" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-10"></div>
+
+    <!-- Watchlist -->
+    <h2 class="text-2xl font-semibold mb-3">📌 Your Watchlist</h2>
+    <div id="watchlist" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
